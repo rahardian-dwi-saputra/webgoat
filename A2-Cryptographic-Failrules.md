@@ -4,6 +4,7 @@
 echo 'dGVzdGluZzpwYXNzdzByZA==' | base64 --decode
 ``` 
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/wg%201.JPG)
 
 **Jawaban:**
 - Username
@@ -18,6 +19,9 @@ passw0rd
 # XOR Encoding
 - **Pertanyaan:** {xor}Oz4rPj0+LDovPiwsKDAtOw==
 - Gunakan XOR decoder online https://strelitzia.net/wasXORdecoder/wasXORdecoder.html
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/wg%202.JPG)
+
 **Jawaban:**
 ```sh
 databasepassword
@@ -28,6 +32,9 @@ databasepassword
 	- 5F4DCC3B5AA765D61D8327DEB882CF99
 	- 2BB80D537B1DA3E38BD30361AA855686BDE0EACD7162FEF6A25FE97BF527A25B
 - Gunakan tool decrypt hash online https://crackstation.net/
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/wg%203.JPG)
+
 **Jawaban:**
 ```sh
 password
@@ -46,3 +53,5 @@ MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDGZU9ZvsCuupJdignvvyt+DFCJm74C
 ```sh
 echo 'paste privatekey disini' > privatekey.pem
 ```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/wg%204.JPG)
