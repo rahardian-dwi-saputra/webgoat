@@ -44,7 +44,7 @@ secret
 # RSA Private Key
 - Simpan private key dengan nama file **privatekey.pem**
 ```sh
-echo 'paste privatekey disini' > privatekey.pem
+echo 'paste privatekey disini' > id_rsa
 ```
 
-![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/wg%204.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/wg%204.jpg)
