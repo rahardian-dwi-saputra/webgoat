@@ -88,3 +88,59 @@ eyJhbGciOiJOb25lIn0.eyJpYXQiOjE2OTg3MjYwNTQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20i
 - Jika sudah tekan tombol **Send**
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2018.JPG)
+
+## Code review
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2019.JPG)
+
+## JWT cracking
+- JWT Token
+```sh
+eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJhdWQiOiJ3ZWJnb2F0Lm9yZyIsImlhdCI6MTY5Nzg3ODk2MywiZXhwIjoxNjk3ODc5MDIzLCJzdWIiOiJ0b21Ad2ViZ29hdC5vcmciLCJ1c2VybmFtZSI6IlRvbSIsIkVtYWlsIjoidG9tQHdlYmdvYXQub3JnIiwiUm9sZSI6WyJNYW5hZ2VyIiwiUHJvamVjdCBBZG1pbmlzdHJhdG9yIl19.5L8I4luDQqgNycee6cenWi8D9kYX3BrmfIZyW2RzaXw
+```
+- Kali ini kita menggunakan tool `hashcat` untuk meng-crack JWT
+- Berdasarkan website https://hashcat.net/wiki/doku.php?id=example_hashes mode untuk crack JWT adalah **16500**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2020.JPG)
+
+- Untuk wordlists kita akan gunakan `Seclists` https://github.com/danielmiessler/SecLists untuk kali linux cukup gunakan perintah berikut melakukan instalasi
+```sh
+sudo apt install seclists
+```
+- Simpan token ke sebuah file dengan perintah berikut ini
+```sh
+echo 'eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJhdWQiOiJ3ZWJnb2F0Lm9yZyIsImlhdCI6MTY5Nzg3ODk2MywiZXhwIjoxNjk3ODc5MDIzLCJzdWIiOiJ0b21Ad2ViZ29hdC5vcmciLCJ1c2VybmFtZSI6IlRvbSIsIkVtYWlsIjoidG9tQHdlYmdvYXQub3JnIiwiUm9sZSI6WyJNYW5hZ2VyIiwiUHJvamVjdCBBZG1pbmlzdHJhdG9yIl19.5L8I4luDQqgNycee6cenWi8D9kYX3BrmfIZyW2RzaXw' > jwt_token.txt
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2021.JPG)
+
+- Lakukan cracking menggunakan tool hascat
+```sh
+hashcat -m 16500 jwt_token.txt /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2022.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2023.JPG)
+
+- Buka website https://jwt.io/ lalu masukkan JWT Token diatas
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2024.JPG)
+
+- Kemudian masukkan secret key yang diperoleh dari tool hashcat ke field VERIFY SIGNATURE
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2025.JPG)
+
+- Ubah username menjadi **WebGoat**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2026.JPG)
+
+- Naikan nilai exp untuk memperpanjang masa aktif JWT Token
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2027.JPG)
+
+- Copy JWT Token hasil encode untuk menjawab soal
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2028.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2029.JPG)
