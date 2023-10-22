@@ -144,3 +144,75 @@ hashcat -m 16500 jwt_token.txt /usr/share/seclists/Discovery/Web-Content/raft-me
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2028.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2029.JPG)
+
+## Refreshing a token
+- Buka halaman http://127.0.0.1:9001/WebGoat/start.mvc#lesson/JWT.lesson/11
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2030.JPG)
+
+- Jalankan tool Burpsuite dan setting ke **Intercept is On** lalu refresh halaman
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2031.JPG)
+
+- Tekan tombol **Forward** berulang kali hingga menemukan request ke path URL **/WebGoat/JWT/refresh/login**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2032.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2033.JPG)
+
+- Klik kanan lalu pilih **Send to Repeater**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2034.JPG)
+
+- Pindah ke tab Repeater lalu klik tombol **Send** lalu copy JWT access_token
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2035.JPG)
+
+- Pindah ke tab Decoder lalu paste JWT access_token
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2036.JPG)
+
+- Blok bagian header JWT lalu pilih Decode as .. > Base64
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2037.JPG)
+
+- Kemudian blok bagian claims JWT lalu pilih Decode as .. > Base64
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2038.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2039.JPG)
+
+- Tambahkan tanda `=` pada bagian akhir claims JWT sehingga diperoleh hasil decode sebagai berikut
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2040.JPG)
+
+- Sekarang kita ubah header JWT menjadi sebagai berikut lalu blok header tersebut dan pilih Encode as ... > Base64
+```sh
+{"alg":"None"}
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2041.JPG)
+
+- Setelah itu ubah nama user pada bagian claims JWT dari **Jerry** menjadi **Tom** lalu blok header tersebut dan pilih Encode as ... > Base64
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2042.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2043.JPG)
+
+- Hapus tanda `=` pada bagian header dan hapus bagian signature pada JWT token, sehingga diperoleh JWT access_token sebagai berikut
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2044.JPG)
+
+- Matikan intercept
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2045.JPG)
+
+- Pindah ke tab Proxy > HTTP history lalu klik kanan pilih Clear history untuk membersihkan log lalu tekan tombol **Yes** untuk konfirmasi
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2046.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2047.JPG)
+
+- Kembali ke halaman web lalu tekan tombol **Checkout**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2048.JPG)
