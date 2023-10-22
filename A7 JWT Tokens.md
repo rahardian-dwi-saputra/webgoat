@@ -194,12 +194,18 @@ hashcat -m 16500 jwt_token.txt /usr/share/seclists/Discovery/Web-Content/raft-me
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2041.JPG)
 
 - Setelah itu ubah nama user pada bagian claims JWT dari **Jerry** menjadi **Tom** lalu blok header tersebut dan pilih Encode as ... > Base64
+```sh
+{"admin":"false","user":"Tom"}
+```
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2042.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2043.JPG)
 
 - Hapus tanda `=` pada bagian header dan hapus bagian signature pada JWT token, sehingga diperoleh JWT access_token sebagai berikut
+```sh
+eyJhbGciOiJOb25lIn0.eyJhZG1pbiI6ImZhbHNlIiwidXNlciI6IlRvbSJ9.
+```
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2044.JPG)
 
@@ -216,3 +222,19 @@ hashcat -m 16500 jwt_token.txt /usr/share/seclists/Discovery/Web-Content/raft-me
 - Kembali ke halaman web lalu tekan tombol **Checkout**
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2048.JPG)
+
+- Buka burpsuite dan cari request yang mengarah ke path URL **/WebGoat/JWT/refresh/checkout** lalu Klik kanan pada request tersebut dan pilih **Send to Repeater**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2049.JPG)
+
+- Pindah ke tab Repeater lalu tekan tombol **Send**, dibagian response terdapat keterangan `not a valid JWT Token`
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2050.JPG)
+
+- Sekarang kita masukkan JWT Token yang sudah kita ubah tadi ke pada bagian **Authorization** seperti ini
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2051.JPG)
+
+- Jika sudah tekan tombol **Send** maka kita berhasil melakukan Checkout atas nama user Tom dengan memanfaatkan login sebagai user Jerry
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/JWT%20Tokens/jwt%20tokens%2052.JPG)
