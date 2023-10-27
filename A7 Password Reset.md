@@ -30,3 +30,7 @@ mengirim link via email. Di pelajaran kali ini kita akan membahas beberapa fungs
 - Isi email dengan format `username@webgoat.org` dan masukkan password yang diterima di menu **Mailbox** website webwolf kemudian tekan tombol **Access**
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%207.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%208.JPG)
+
+## Security questions
