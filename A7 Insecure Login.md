@@ -4,16 +4,16 @@ Enkripsi adalah alat penting untuk menjaga komunikasi yang aman. Dalam pelajaran
 ## Let’s try
 - Jalankan tool Burp Suite terlebih dahulu, dan pastikan Intercept dalam kondisi On
 
-- Name:
+- Tekan tombol **Log in**
+
+- Setelah request di intercept, terlihat jelas bahwa disini terdapat informasi username dan password untuk login
 ```sh
-Smith'; select * from user_system_data; --
+{"username":"CaptainJack","password":"BlackPearl"}
 ```
 
-![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/wg%2010.JPG)
+- Tekan tombol **Forward**
 
-Password user Dave:
-```sh
-passW0rD
-```
+- Setelah itu matikan Intercept
 
-## Can you login as Tom?
+- Sekarang kita masukkan username dan password diatas dan tekan tombol **Submit**
+
