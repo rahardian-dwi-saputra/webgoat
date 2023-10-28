@@ -60,11 +60,11 @@ mengirim link via email. Di pelajaran kali ini kita akan membahas beberapa fungs
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2014.JPG)
 
-- Pindah ke Tab Intruder > Payloads, isi payload 1 dengan daftar username sebagai berikut
+- Pindah ke Tab Intruder > Payloads, isi payload 1 dengan daftar username. Anda bisa mencopy list user di file [payload security questions.txt](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/payload%20security%20questions.txt) terlebih dahulu lalu tekan tombol Paste
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2015.JPG)
 
-- Sekarang kita isi payload 2 dengan daftar nama warna. Copy list warna di file terlebih dahulu lalu tekan tombol Paste. Jika sudah tekan tombol **Start attack** dan tunggu hingga proses penyerangan selesai
+- Sekarang kita isi payload 2 dengan daftar nama warna. Copy list warna di file [payload security questions.txt](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/payload%20security%20questions.txt) terlebih dahulu lalu tekan tombol Paste. Jika sudah tekan tombol **Start attack** dan tunggu hingga proses penyerangan selesai
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2016.JPG)
 
