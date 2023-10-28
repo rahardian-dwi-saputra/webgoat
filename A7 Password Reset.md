@@ -3,7 +3,7 @@ Masing-masing dari kita pasti pernah menggunakan fungsi pengaturan ulang kata sa
 mengirim link via email. Di pelajaran kali ini kita akan membahas beberapa fungsi pengaturan ulang kata sandi dan menunjukkan dimana letak kesalahannya.
 
 ## Email functionality with WebWolf
-- Buka website webwolf di tab baru http://127.0.0.1:9090/login dan login dengan username dan password yang digunakan untuk login di webgoat
+- Buka website webwolf di tab baru http://127.0.0.1:9090/login dan login dengan username dan password yang anda gunakan untuk login di webgoat
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%201.JPG)
 
@@ -79,3 +79,98 @@ mengirim link via email. Di pelajaran kali ini kita akan membahas beberapa fungs
 - Dan terakhir username tom memiliki warna favorit purple
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2019.JPG)
+
+## The Problem with Security Questions
+- Meskipun Pertanyaan Keamanan pada awalnya tampak seperti cara yang baik untuk melakukan autentikasi, namun pertanyaan tersebut memiliki beberapa masalah besar. Pertanyaan keamanan yang "sempurna" seharusnya sulit dipecahkan, namun mudah diingat.
+- Pilih 2 buah pertanyaan yang jawabannya mudah ditebak lalu tekan tombol **check**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2020.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2021.JPG)
+
+## Creating the password reset link
+- Buka website webwolf di tab baru http://127.0.0.1:9090/login dan login dengan username dan password yang anda gunakan untuk login di webgoat
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%201.JPG)
+
+- Sekarang kembali ke tab halaman website webgoat http://127.0.0.1:9001/WebGoat/start.mvc#lesson/PasswordReset.lesson/5 lalu klik link **Forgot your password?**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2022.JPG)
+
+- Isi email dengan format `username@webgoat.org` lalu tekan tombol **Continue**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2023.JPG)
+
+- Pindah ke tab halaman website webwolf dan pergi ke menu **Mailbox**, jika belum ada email masuk silahkan tekan tombol reload
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2024.JPG)
+
+- Buka email tersebut dan buka link pengaturan ulang sandi di tab baru
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2025.JPG)
+
+- Setelah dibuka kita bisa mengamati format link untuk reset password, misalnya disini link nya http://127.0.0.1:9001/WebGoat/PasswordReset/reset/reset-password/14e46ad2-ed51-4c57-a225-03cdb638f11f
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2026.JPG)
+
+- Sekarang kita jalankan tool Burp Suite dan pastikan intercept dalam kondisi On
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2027.JPG)
+
+- Isikan email `tom@webgoat-cloud.org` lalu tekan tombol **Continue**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2028.JPG)
+
+- Setelah Burp Suite terbuka, pastikan request tersebut mengarah ke path URL **/WebGoat/PasswordReset/ForgotPassword/create-password-reset-link**. Jika belum tekan tombol **Forward** berulang kali hingga menemukan path URL tersebut. Jika sudah klik kanan dan pilih **Send to Repeater**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2029.JPG)
+
+- Tekan tombol **Forward**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2030.JPG)
+
+- Kemudian matikan intercept
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2031.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2032.JPG)
+
+- Pindah ke tab Repeater dan tekan tombol **Send**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2033.JPG)
+
+- Ubah port pada request menjadi 9090
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2034.JPG)
+
+- Jika sudah tekan tombol **Send**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2035.JPG)
+
+- Pindah ke tab halaman website webwolf dan pergi ke menu **Incoming requests**, disini terdapat token reset password user tom
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2036.JPG)
+
+- Copy token tersebut
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2037.JPG)
+
+- Pada langkah sebelumnya, kita tahu bahwa reset password berada di link http://127.0.0.1:9001/WebGoat/PasswordReset/reset/reset-password/token jadi kita tinggal mengganti token tersebut dengan token diatas. Jadi kita tinggal ubah URL nya menjadi http://127.0.0.1:9001/WebGoat/PasswordReset/reset/reset-password/bf2e36e2-542e-4c89-b3b3-b787620bece2
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2038.JPG)
+
+- Isi field password lalu tekan tombol Save
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2039.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2040.JPG)
+
+- Kembali ke tab halaman website webgoat lalu tekan link **Account Access**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2041.JPG)
+
+- Isi email dengan `tom@webgoat-cloud.org` dan password baru yang anda inputkan tadi
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2042.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/password%20reset/password%20reset%2043.JPG)
