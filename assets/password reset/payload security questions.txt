@@ -1,0 +1,21 @@
+List user:
+
+tom
+admin
+larry
+
+List warna:
+
+white
+black
+yellow
+red
+green
+blue
+orange
+brown
+grey
+pink
+purple
+aqua
+
