@@ -4,10 +4,16 @@ CSRF atau XSRF adalah jenis eksploitasi berbahaya pada situs web di mana perinta
 ## Basic Get CSRF Exercise
 - Buka halaman http://127.0.0.1:9001/WebGoat/start.mvc#lesson/CSRF.lesson/2
 - Klik kanan pada samping tombol **Submit Query** lalu pilih Inspect
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%201.JPG)
+
 - Temukan sebuah form di sekitar tombol tersebut
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%202.JPG)
 
 - Sekarang kita copy form tersebut dengan cara klik kanan lalu pilih Copy > Outer HTML
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%203.JPG)
 
 - Disini webgoat berjalan di localhost dan port 9001 sehingga kita perlu menambahkan informasi tersebut pada atribut action sehingga source code nya menjadi seperti berikut ini, simpan dengan nama **csrf.html**
 ```sh
@@ -18,12 +24,28 @@ CSRF atau XSRF adalah jenis eksploitasi berbahaya pada situs web di mana perinta
 ```
 - Login ke web wolf di tab baru melalui url http://127.0.0.1:9090/login dan login menggunakan akun yang anda gunakan di webgoat
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%204.JPG)
+
 - Pergi ke menu Files
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%205.JPG)
 
 - Unggah file **csrf.html**
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%206.JPG)
+
 - Jika sudah berhasil terunggah klik link
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%207.JPG)
 
 - Lalu tekan tombol **Submit Query**
 
-- Kembali ke halaman webgoat dan masukkan nilai flag
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%208.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%209.JPG)
+
+- Kembali ke halaman webgoat http://127.0.0.1:9001/WebGoat/start.mvc#lesson/CSRF.lesson/2 dan masukkan nilai flag
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2010.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2011.JPG)
