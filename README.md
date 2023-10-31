@@ -14,19 +14,24 @@ http://127.0.0.1:9001/WebGoat
 
 ## Lesson
 - **(A1) Broken Access Control**
-	- [Insecure Direct Object References](A1%20Insecure%20Direct%20Object%20References.md)
+	- [Insecure Direct Object References(IDOR)](A1%20Insecure%20Direct%20Object%20References.md)
 	- [Spoofing an Authentication Cookie](A1%20Spoofing%20an%20Authentication%20Cookie.md)
 - **(A2) Cryptographic Fairules**
 	- [Crypto Basics](A2%20Crypto%20Basics.md)
 - **(A3) Injection**
 	- [SQL Injection (intro)](A3%20SQL%20Injection%20Intro.md)
-	- [Cross Site Scripting](A3%20Cross%20Site%20Scripting.md)
+	- [Cross Site Scripting(XSS)](A3%20Cross%20Site%20Scripting.md)
 - **(A5) Security Misconfiguration**
 - **(A6) Vuln and Outdated Components**
 - **(A7) Identity & Auth Failure**
 	- [Authentication Bypasses](A7%20Authentication%20Bypasses.md)
 	- [Insecure Login](A7%20Insecure%20Login.md)
 	- [JWT tokens](A7%20JWT%20Tokens.md)
+	- [Password reset](A7%20Password%20Reset.md)
+	- [Secure Passwords](A7%20Secure%20Passwords.md)
 - **(A8) Software & Data Integrity**
 - **(A9) Security Logging Fairules**
+	- [Logging Security](A9%20Logging%20Security.md)
 - **(A10) Server-side Request Forgery**
+	- [Cross-Site Request Forgeries(CSRF)](A10%20Cross-site%20Request%20Forgeries.md)
+	- [Server-Site Request Forgery(SSRF)](A10%20Server-Site%20Request%20Forgery.md)
