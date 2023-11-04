@@ -12,6 +12,10 @@ statement.setString(1, name)
 statement.setString(2, mail)
 ```
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20mitigation/sqli%20mitigation%201.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20mitigation/sqli%20mitigation%202.JPG)
+
 ## Try it! Writing safe code
 - Tuliskan source code berikut ini kemudian tekan tombol **Submit**
 ```sh
@@ -25,3 +29,7 @@ try {
     System.out.println("Oops. Something went wrong!");
 }
 ```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20mitigation/sqli%20mitigation%203.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20mitigation/sqli%20mitigation%204.JPG)
