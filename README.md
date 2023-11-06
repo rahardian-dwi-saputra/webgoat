@@ -20,7 +20,7 @@ http://127.0.0.1:9001/WebGoat
 	- [Crypto Basics](A2%20Crypto%20Basics.md)
 - **(A3) Injection**
 	- [SQL Injection (intro)](A3%20SQL%20Injection%20Intro.md)
-	- [SQL Injection (migigation)](A3%20SQL%20Injection%20mitigation.md)
+	- [SQL Injection (mitigation)](A3%20SQL%20Injection%20mitigation.md)
 	- [Path traversal](A3%20Path%20traversal.md)
 	- [Cross Site Scripting(XSS)](A3%20Cross%20Site%20Scripting.md)
 - **(A5) Security Misconfiguration**
@@ -38,3 +38,6 @@ http://127.0.0.1:9001/WebGoat
 - **(A10) Server-side Request Forgery**
 	- [Cross-Site Request Forgeries(CSRF)](A10%20Cross-site%20Request%20Forgeries.md)
 	- [Server-Site Request Forgery(SSRF)](A10%20Server-Site%20Request%20Forgery.md)
+
+## Disclaimer
+Semua materi yang disajikan disini hanya digunakan sebagai media pembelajaran. Penulis tidak bertanggung jawab atas penyalahgunaan dari materi tersebut
