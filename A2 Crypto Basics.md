@@ -54,32 +54,32 @@ echo 'paste privatekey disini' > id_rsa
 openssl rsa -in id_rsa -pubout > id_rsa.pub
 ```
 
-![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%205.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%205.JPG)
 
 - Ambil nilai modulus dari public key dan copy nilai modulus tersebut untuk menjawab soal
 ```sh
 openssl rsa -in id_rsa.pub -pubin -modulus -noout
 ```
 
-![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%206.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%206.JPG)
 
 - Ambil sign dari modulus dan private key dan simpan dengan nama file **sign.sha256**
 ```sh
 echo -n "paste modulus disini" | openssl dgst -sign id_rsa -sha256 -out sign.sha256
 ```
 
-![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%207.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%207.JPG)
 
 - Encode file **sign.sha256** dengan base64
 ```sh
 openssl enc -base64 -in sign.sha256 -out sign.sha256.base64
 ```
 
-![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%208.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%208.JPG)
 
 - Tampilkan isi file **sign.sha256.base64** dan copy isinya untuk menjawab soal
 ```sh
 cat sign.sha256.base64
 ```
 
-![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%209.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%209.JPG)
