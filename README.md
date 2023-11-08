@@ -38,6 +38,10 @@ http://127.0.0.1:9001/WebGoat
 - **(A10) Server-side Request Forgery**
 	- [Cross-Site Request Forgeries(CSRF)](A10%20Cross-site%20Request%20Forgeries.md)
 	- [Server-Site Request Forgery(SSRF)](A10%20Server-Site%20Request%20Forgery.md)
+- Client side
+	- [Bypass front-end restrictions](CS%20-%20Bypass%20Front-end%20restrictions.md)
+	- [Client side filtering](CS%20-%20Client%20site%20filtering.md)
+	- [HTML tampering](CS%20-%20HTML%20tampering.md)
 
 ## Disclaimer
 Semua materi yang disajikan disini hanya digunakan sebagai media pembelajaran. Penulis tidak bertanggung jawab atas penyalahgunaan dari materi tersebut
