@@ -7,35 +7,53 @@ WebGoat adalah aplikasi web rentan (tidak aman) yang memungkinkan pengembang (de
 sudo apt install -y docker.io
 ```
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/1.JPG)
+
 - Install docker-compose
 ```sh
 sudo apt install docker-compose
 ```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/2.JPG)
 
 - Jalankan service docker
 ```sh
 sudo systemctl enable docker --now
 ```
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/3.JPG)
+
 - Pull docker image webgoat
 ```sh
 sudo docker pull webgoat/webgoat
 ```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/4.JPG)
 
 - Jalankan aplikasi WebGoat, disini kita menggunakan IP `0.0.0.0` supaya WebGoat dapat diakses di mesin lainnya seperti Kali Linux dan Time Zone yang kita gunakan adalah `Asia/Jakarta`. Anda bisa mengubahnya sesuai keinginan anda
 ```sh
 sudo docker run -p 0.0.0.0:8080:8080 -p 0.0.0.0:9090:9090 -e TZ=Asia/Jakarta webgoat/webgoat
 ```
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/5.JPG)
+
 - WebGoat dapat diakses melalui URL `http://<IP_SERVER>:8080/WebGoat`. Setelah berhasil diakses lakukan registerasi terlebih dahulu dengan mengklik link register
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/6.JPG)
 
 - Isi sesuai kemauan anda lalu tekan tombol **Sign up**
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/7.JPG)
+
 - Jika register berhasil, kita akan diarahkan otomatis masuk ke aplikasi WebGoat
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/8.JPG)
 
 - Untuk WebWolf bisa diakses melalui URL `http://<IP_SERVER>:9090/WebWolf`. Gunakan username dan password yang sudah diregister diatas untuk Login
 
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/9.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/10.JPG)
 
 ## Instalasi di Kali Linux menggunakan file JAR
 - Download File Jar di https://github.com/WebGoat/WebGoat/releases
