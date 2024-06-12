@@ -1,7 +1,7 @@
 # OWASP WebGoat
 WebGoat adalah aplikasi web rentan (tidak aman) yang memungkinkan pengembang (developer) menguji celah keamanan yang umum ditemukan dalam aplikasi berbasis Java. OWASP WebGoat berisi contoh-contoh OWASP Top 10 vulnerabilities
 
-## Instalasi di Ubuntu menngunakan Docker
+## Instalasi di Ubuntu menggunakan Docker
 - Sebelum menginstall OWASP WebGoat, kita perlu menginstall docker terlebih dahulu
 ```sh
 sudo apt install -y docker.io
@@ -55,7 +55,7 @@ sudo docker run -p 0.0.0.0:8080:8080 -p 0.0.0.0:9090:9090 -e TZ=Asia/Jakarta web
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/instalasi/10.JPG)
 
-## Instalasi di Kali Linux menggunakan file JAR
+## Instalasi di Kali Linux menggunakan file .jar
 - Download File Jar di https://github.com/WebGoat/WebGoat/releases
 - Jalankan OWASP WebGoat di port yang berbeda, misalnya port 9001
 ```sh
