@@ -83,3 +83,90 @@ cat sign.sha256.base64
 ```
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%209.JPG)
+
+# Java cacerts
+- Jalankan docker image terlebih dahulu di mesin Ubuntu. Jika docker image belum tersedia maka sistem akan mendownload secara otomatis. Jika sudah akan tampil hash id untuk mengakses docker shell
+```sh
+sudo docker run -d webgoat/assignments:findthesecret
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2010.JPG)
+
+- Akses docker shell melalui terminal
+```sh
+sudo docker exec -it docker_id /bin/bash
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2011.JPG)
+
+- Kita tidak dapat mengakses direktori `/root` tapi kita bisa mengakses direktori `/etc` dan menemukan file `passwd` disana
+```sh
+cd /etc
+ls
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2012.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2013.JPG)
+
+- Baca isi file `passwd` lalu ketik `exit` untuk keluar dari docker shell
+```sh
+cat passwd
+exit
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2014.JPG)
+
+- Sekarang kita copy file `/etc/passwd` dari docker ke lokal
+```sh
+sudo docker cp docker_id:/etc/passwd ./passwd
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2015.JPG)
+
+- Edit file `passwd` dengan editor nano. Lalu ubah user ID (uid) dan grup ID (gid) user webgoat menjadi 0 sehingga mempunyai akses user root. Tekan `Ctrl+O` untuk menyimpan dan tekan `Ctrl+X` untuk keluar 
+```sh
+sudo nano passwd
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2016.JPG)
+
+- Masukkan file `passwd` yang sudah dimodifikasi ke docker shell
+```sh
+sudo docker cp ./passwd docker_id:/etc/passwd
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2017.JPG)
+
+- Akses docker shell kembali melalui terminal dan sekarang kita berhasil masuk sebagai user root
+```sh
+sudo docker exec -it docker_id /bin/bash
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2018.JPG)
+
+- Akses direktori `/root` dan disana terdapat file `default_secret` yang berisi key yang akan kita gunakan untuk mendekrip pesan di task ini
+```sh
+cd /root
+cat default_secret
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2019.JPG)
+
+- Sekarang kita tahu bahwa file yang menyimpan key bernama `default_secret` jadi kita tinggal masukkan nama file tersebut ke dalam command line untuk mendekrip pesan dari task yang sudah diberikan
+```sh
+echo "U2FsdGVkX199jgh5oANElFdtCxIEvdEvciLi+v+5loE+VCuy6Ii0b+5byb5DXp32RPmT02Ek1pf55ctQN+DHbwCPiVRfFQamDmbHBUpD7as=" | openssl enc -aes-256-cbc -d -a -kfile default_secret
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/crypto%20basics/crypto%20basic%2020.JPG)
+
+- **Pertanyaan:** What is the unencrypted message
+- **Jawaban:**
+ ```sh
+Leaving passwords in docker images is not so secure
+```
+- **Pertanyaan:** and what is the name of the file that stored the password
+- **Jawaban:**
+```sh
+default_secret
+```

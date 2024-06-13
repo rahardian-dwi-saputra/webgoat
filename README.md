@@ -68,7 +68,9 @@ http://127.0.0.1:9001/WebGoat
 
 ## Lesson
 - **(A1) Broken Access Control**
+	- [Hijack a session](A1%20Hijack%20a%20Session.md)
 	- [Insecure Direct Object References(IDOR)](A1%20Insecure%20Direct%20Object%20References.md)
+	- [Missing Function Level Access Control](A1%20Missing%20Function%20Level%20Access%20Control.md)
 	- [Spoofing an Authentication Cookie](A1%20Spoofing%20an%20Authentication%20Cookie.md)
 - **(A2) Cryptographic Fairules**
 	- [Crypto Basics](A2%20Crypto%20Basics.md)
