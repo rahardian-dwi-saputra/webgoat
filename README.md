@@ -76,9 +76,10 @@ http://127.0.0.1:9001/WebGoat
 	- [Crypto Basics](A2%20Crypto%20Basics.md)
 - **(A3) Injection**
 	- [SQL Injection (intro)](A3%20SQL%20Injection%20Intro.md)
+	- [SQL Injection (advanced)](A3%20SQL%20Injection%20Advanced.md)
 	- [SQL Injection (mitigation)](A3%20SQL%20Injection%20mitigation.md)
-	- [Path traversal](A3%20Path%20traversal.md)
 	- [Cross Site Scripting(XSS)](A3%20Cross%20Site%20Scripting.md)
+	- [Path traversal](A3%20Path%20traversal.md)
 - **(A5) Security Misconfiguration**
 	- [XXE](A5%20XXE.md)
 - **(A6) Vuln and Outdated Components**
