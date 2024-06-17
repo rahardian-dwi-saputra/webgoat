@@ -116,3 +116,11 @@ thisisasecretfortomonly
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20advanced/sqli%20advanced%2015.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20advanced/sqli%20advanced%2016.JPG)
+
+## Quiz
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20advanced/sqli%20advanced%2017.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20advanced/sqli%20advanced%2018.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/webgoat/blob/main/assets/sql%20injection%20advanced/sqli%20advanced%2019.JPG)
