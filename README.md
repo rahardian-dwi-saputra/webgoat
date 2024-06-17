@@ -103,6 +103,7 @@ http://127.0.0.1:9001/WebGoat
 - Challenges
 	- [Admin lost password](Ch%20-%20Admin%20lost%20password.md)
 	- [Without password](Ch%20-%20Without%20password.md)
+	- [Admin password reset](Ch%20-%20Admin%20password%20reset.md)
 	- [Without account](Ch%20-%20Without%20account.md)
 
 ## Disclaimer
